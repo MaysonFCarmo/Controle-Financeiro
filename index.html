@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login" class="login-container">
+    <div class="login-box">
+        <div class="logo">Finance App</div>
+        <input type="text" placeholder="Usuário">
+        <input type="password" placeholder="Senha">
+        <button onclick="entrar()">Entrar</button>
+    </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="dashboard" style="display:none;">
+
+    <div class="top-bar">
+        <h2>Controle Financeiro</h2>
+
+        <div class="filtro-data">
+            <input type="month" id="filtroMes">
+            <button onclick="filtrarPorMes()">Filtrar</button>
+            <button onclick="limparFiltro()">Limpar</button>
+        </div>
+
+        <button class="small-btn" onclick="logout()">Sair</button>
+    </div>
+
+    <div class="chart-container">
+        <div id="graficoFinanceiro"></div>
+    </div>
+
+    <div class="cards">
+        <div class="card green">
+            <h4>Receitas</h4>
+            <h2 id="totalReceitas">R$ 0,00</h2>
+        </div>
+
+        <div class="card red">
+            <h4>Despesas</h4>
+            <h2 id="totalDespesas">R$ 0,00</h2>
+        </div>
+
+        <div class="card">
+            <h4>Saldo</h4>
+            <h2 id="saldoTotal">R$ 0,00</h2>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button onclick="abrirModal()">+ Nova Transação</button>
+    </div>
+
+    <div class="transactions">
+        <h3>Transações</h3>
+        <div id="listaTransacoes"></div>
+    </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="modalTransacao" class="modal">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h3>Nova Transação</h3>
+            <span class="close" onclick="fecharModal()">X</span>
+        </div>
+
+        <div class="toggle">
+            <button id="btnReceita" onclick="tipoTransacao('receita')">Receita</button>
+            <button id="btnDespesa" class="active" onclick="tipoTransacao('despesa')">Despesa</button>
+        </div>
+
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="number" id="valor" placeholder="Valor">
+        <input type="date" id="data">
+
+        <button onclick="salvarTransacao()">Salvar</button>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

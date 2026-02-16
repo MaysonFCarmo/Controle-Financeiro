@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #0f0f0f;
+    color: #fff;
+}
+
+/* LOGIN */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background: #1a1a1a;
+    padding: 40px;
+    border-radius: 16px;
+    width: 340px;
+    text-align: center;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00ff88;
+    margin-bottom: 20px;
+}
+
+.login-box input,
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #2a2a2a;
+    border: none;
+    border-radius: 8px;
+    color: white;
+}
+
+.login-box button,
+.actions button,
+.modal button {
+    background: #00ff88;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.small-btn {
+    background: #ff3b3b;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+}
+
+/* DASHBOARD */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #121212;
+}
+
+.filtro-data {
+    display: flex;
+    gap: 10px;
+}
+
+.filtro-data input {
+    background: #1f1f1f;
+    color: #00ff88;
+    border: 1px solid #00ff88;
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.chart-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    flex: 1;
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.card.green h2 { color: #00ff88; }
+.card.red h2 { color: #ff3b3b; }
+
+.transactions {
+    padding: 20px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.transaction.receita .valor { color: #00ff88; }
+.transaction.despesa .valor { color: #ff3b3b; }
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    width: 320px;
+}
+
+.toggle {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.toggle button {
+    flex: 1;
+    background: #2a2a2a;
+    border: none;
+    color: white;
+}
+
+.toggle button.active {
+    background: #00ff88;
+    color: black;
+}
